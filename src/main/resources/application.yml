@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///springboot?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    database: mysql
+
+
+mybatis:
+  # 配置mapper映射文件位置
+  mapper-locations: classpath:mapper/*Mapper.xml
+  # 配置别名
+  type-aliases-package: com.example.pojo
+
