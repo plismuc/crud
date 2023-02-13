@@ -1,4 +1,4 @@
-package com.entity;
+package com.example.entity;
 
 /**
  * 统一返回值
