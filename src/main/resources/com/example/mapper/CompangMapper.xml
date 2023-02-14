@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.CompangMapper">
-    <select id="findById" parameterType="int" resultType="compang">
-        select * from t_compang where id=#{id}
-    </select>
+<!--<?xml version="1.0" encoding="UTF-8" ?>-->
+<!--<!DOCTYPE mapper-->
+<!--        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"-->
+<!--        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--<mapper namespace="com.example.mapper.CompanyMapper">-->
+<!--    <select id="findById" parameterType="int" resultType="company">-->
+<!--        select * from t_company where id=#{id}-->
+<!--    </select>-->
 
-    <select id="findAllCompang" resultType="compang">
-        select * from t_compang
-    </select>
+<!--    <select id="findAllCompany" resultType="company">-->
+<!--        select * from t_company-->
+<!--    </select>-->
 
-</mapper>
+<!--    <update id="updateCompany" parameterType="company">-->
+<!--        update t_company set short_name=#{shortname},full_name=#{fullname},is_famous=#{isfamous},state=#{state},remark=#{remark} where id=#{id}-->
+<!--    </update>-->
+<!--    <delete id="deleteCompany" parameterType="Integer">-->
+<!--        delete from t_company where id=#{id}-->
+<!--    </delete>-->
+<!--</mapper>-->

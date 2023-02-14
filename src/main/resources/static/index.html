@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+
+    <!--说明我的视图有问题--->
+</head>
+<body>
+     <div id="app">
+        <h1>公司的信息</h1>
+        <h2>
+           <a href="add.html"></a>
+        </h2>
+            <div
+                    v-for="company in info">
+            <table style="border: 1px solid black;">
+                <tr>
+                    <td>公司ID</td>
+                    <td>公司的名称</td>
+                </tr>
+                <tr>
+                     <td>{{company.id}}</td>
+                      <td>{{company.short_name}}</td>
+                </tr>
+            </table>
+        </div>
+     </div>
+     <script type = "text/javascript">
+         //复制的代码 --->不要动,调整参数
+         new Vue({
+             el: '#app',
+             data () {
+                 return {
+                     info: null
+                 }
+             },
+             mounted () {
+                 axios
+                     .get('http://localhost:8080/compang')
+                     .then(response => (this.info = response.data.data))
+                     .catch(function (error) { // 请求失败处理
+                         console.log(error);
+                     });
+             }
+         })
+     </script>
+</body>
+</html>

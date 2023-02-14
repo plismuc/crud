@@ -1,31 +1,45 @@
 package com.example.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
-public class Compang{
-    private Integer id;
+@Entity
+@Table(name="t_company")
+public class Company {
+    @Id
+    private Integer id;//
+    private String short_name;//公司名称
 
-    private String short_name;
-
+    //@Column()   默认情况 实体类和数据库是一致的,如果不一致 就用
     private String full_name;//公司全称
-    private Integer is_famous;//是否名企: 0.不是1. 是
-    private Integer state;//状态: 0. 启用
 
+    @Column(name = "is_famous")
+    private Integer isfamous;//是否名企：0.不是  1.是
+    private Integer state;//状态：  0.启用      1.禁用
     private String remark;// 备注
-    private Date create_date;
+    @Column(name = "create_date")
+    private Date createdate;//
 
-    public Compang(Integer id, String short_name, String full_name, Integer is_famous, Integer state, String remark, Date create_date) {
+    public Date getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(Date createdate) {
+        this.createdate = createdate;
+    }
+
+    public Company(){}
+    public Company(Integer id, String short_name, String full_name, Integer is_famous, Integer state, String remark, Date createdate) {
         this.id = id;
         this.short_name = short_name;
         this.full_name = full_name;
-        this.is_famous = is_famous;
+        this.isfamous = is_famous;
         this.state = state;
         this.remark = remark;
-        this.create_date = create_date;
-    }
-
-    public Compang() {
-
+        this.createdate = createdate;
     }
 
     public Integer getId() {
@@ -53,11 +67,11 @@ public class Compang{
     }
 
     public Integer getIs_famous() {
-        return is_famous;
+        return isfamous;
     }
 
     public void setIs_famous(Integer is_famous) {
-        this.is_famous = is_famous;
+        this.isfamous = is_famous;
     }
 
     public Integer getState() {
@@ -76,24 +90,17 @@ public class Compang{
         this.remark = remark;
     }
 
-    public Date getCreate_date() {
-        return create_date;
-    }
-
-    public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
-    }
 
     @Override
     public String toString() {
-        return "Compang{" +
+        return "Company{" +
                 "id=" + id +
                 ", short_name='" + short_name + '\'' +
                 ", full_name='" + full_name + '\'' +
-                ", is_famous=" + is_famous +
+                ", is_famous=" + isfamous +
                 ", state=" + state +
                 ", remark='" + remark + '\'' +
-                ", create_date=" + create_date +
+                ", create_date=" + createdate +
                 '}';
     }
 }
