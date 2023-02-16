@@ -8,7 +8,6 @@ spring:
     show-sql: true
     database: mysql
 
-
 mybatis:
   # 配置mapper映射文件位置
   mapper-locations: classpath:mapper/*Mapper.xml

@@ -10,7 +10,7 @@ package com.example.entity;
 public class Result {
     private boolean flag;
     private Integer code;
-    private String  message;
+    private String message;
     private Object data;
 
     //没有返回值
@@ -19,6 +19,7 @@ public class Result {
         this.code = code;
         this.message = message;
     }
+
     //没有返回值
     public Result(boolean flag, Integer code, String message, Object data) {
         this.flag = flag;
@@ -26,7 +27,9 @@ public class Result {
         this.message = message;
         this.data = data;
     }
-    public Result(){}
+
+    public Result() {
+    }
 
     public boolean isFlag() {
         return flag;
